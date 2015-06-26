@@ -1,0 +1,31 @@
+﻿<html ng-app="berlinClock">
+<head>
+    <title>Berlin Clock </title>
+    <script src="../Scripts/jquery-2.1.3.min.js"></script>
+    <script src="../Scripts/angular.min.js"></script>
+    <script type="text/javascript" src="../Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../Website/Scripts/controllerBerlin.js"></script>
+    <script type="text/javascript" src="../Website/Scripts/berlin.js"></script>
+    <link rel="stylesheet" type="text/css" href="../Content/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../Content/BerlinClock.css">
+</head>
+<body ng-controller="clockController">
+    <br/>
+    <div class="title center"><h2>Whitney's Berlin Clock</h2></div>
+    <div id="secondsRow">
+        <div class="col-sm-5 center block" ng-class="{yellow: sec =='Y'}"></div>
+    </div>
+    <div id="fiveHoursRow">
+        <div class="col-sm-2 block" ng-repeat="fiveHour in fiveHours track by $index" ng-class="{red: fiveHour == 'R'}"></div>
+    </div>
+    <div id="hoursRow">
+        <div class="col-sm-2 block" ng-repeat="hour in hours track by $index" ng-class="{yellow: hour == 'Y' , red: hour == 'R'}"></div>
+    </div>
+    <div id="fiveMinutesRow">
+        <div class="col-sm-1 block"  ng-repeat="fiveMinute in fiveMinutes track by $index" ng-class="{yellow: fiveMinute == 'Y' , red: fiveMinute == 'R'}"></div>
+    </div>
+    <div id="minutesRow">
+        <div class="col-sm-2 block" ng-repeat="m in min track by $index" ng-class="{yellow: m == 'Y'}"></div>
+    </div>
+</body>
+</html>

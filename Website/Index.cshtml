@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<html>
+<head>
+    <title>Berlin Clock </title>
+
+    <link rel="stylesheet" type="text/css" href="../Content/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../Content/BerlinClock.css">
+    <script type="text/javascript" src="../Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../Website/Scripts/berlin.js"></script>
+</head>
+<body ng-controller="clockController">
+    <div id="secondsRow">
+        <div ng-class="{yellow: sec =='Y'}">hello{{sec}}</div>
+    </div>
+    <div id="fiveHoursRow">
+        <div ng-repeat="fiveHours in fiveHoursRow track by $index">></div>
+    </div>
+    <div id="hoursRow">
+        <div ng-repeat="hours in hoursRow track by $index" ng-class="{red: hours == ''R'|| yellow: hours =='Y'}"></div>
+    </div>
+    <div id="fiveMinutesRow">
+        <div ng-repeat="fiveMinutes in fiveMinutesRow track by $index"></div>
+    </div>
+    <div id="minutesRow">
+        <div ng-repeat="minutes in minutesRow track by $index" ng-class="{yellow: minutes =='Y'}"></div>
+    </div>
+</body>
+</html>
